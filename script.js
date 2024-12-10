@@ -211,4 +211,4 @@ function checkAllSubtopics(topicIndex) {
         addButton.classList.remove("green"); // Unmark the topic
         vertical.classList.remove("close")
     }
-}
+    }
