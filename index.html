@@ -20,28 +20,388 @@
     <nav class="desktop-nav">
         <div class="logo">
             <img src="./assets/Logo-removebg.png" alt="Logo" class="img-logo">
-            <div class="name">Examly</div>
+            <div class="name default-cursor">Examly</div>
         </div>
         <div class="account">
-            <button class="btn btn-1">Log in</button>
-            <button class="btn btn-2">Sign up</button>
+            <button class="btn btn-1 pointer-cursor">Log in</button>
+            <button class="btn btn-2 pointer-cursor">Sign up</button>
         </div>
     </nav>
     <div class="main">
         <div class="header">
-            <div class="thin-text">Study With Us</div>
-            <div class="bold-text">
+            <div class="thin-text default-cursor">Study With Us</div>
+            <div class="bold-text default-cursor">
                 <h1>Examly</h1>
             </div>
         </div>
         <div class="main-container">
             <div class="box-container">
-                <div class="button-box">Physics</div>
-                <div class="button-box">Biology</div>
-                <div class="button-box">Chemistry</div>
-                <div class="button-box">Economics</div>
-                <div class="button-box">Maths</div>
-                <div class="button-box">English Lang</div>
+                <div class="button-box" onclick="openSubject('Physics')">Physics</div>
+                <div class="button-box" onclick="openSubject('Biology')">Biology</div>
+                <div class="button-box" onclick="openSubject('Chemistry')">Chemistry</div>
+                <div class="button-box" onclick="openSubject('Economics')">Economics</div>
+                <div class="button-box" onclick="openSubject('Maths')">Maths</div>
+                <div class="button-box" onclick="openSubject('English Lang')">English Lang</div>
+            </div>
+        </div>
+    </div>
+    <div class="subject close">
+        <div class="back" onclick="openSubject()">
+            <div>
+                <img src="./assets/Back_Arrow-removebg-preview.png" alt="Back Arrow" class="back-arrow pointer-cursor">
+            </div>
+            <div class="back-text">
+                <h2 class="default-cursor">Back</h2>
+            </div>
+        </div>
+        <div class="subject-display">
+            <div class="subject-description default-cursor ">
+            </div>
+            <div class="topics-display">
+                <div class="topics-intro default-cursor">
+                    Choose Which Topics You Want In Your Past Paper
+                </div>
+                <div class="open-topics" onclick="openTopics()">
+                    <p class="default-cursor">Choose Topics</p>
+                    <img src="./assets/arrow.png" alt="arrow" class="icon arrow pointer-cursor">
+                </div>
+                <div class="choose-topics">
+                    <div class="topics">
+                        <div class="topic">
+                            <p class="default-cursor">The Nature & Variety of Living Organisms</p>
+                            <div class="container">
+                                <div class="add add-topic" onclick="includeTopic(0)">
+                                    <div>
+                                        <span class="vertical vertical-topic"></span>
+                                    </div>
+                                    <div>
+                                        <span class="horizontal horizontal-topic"></span>
+                                    </div>
+                                </div>
+                                <img src="./assets/down.png" alt="arrow" class="icon arrow-subtopic pointer-cursor" onclick="openSubtopics(0)">
+                            </div>
+                        </div>
+                        <div class="sub-topics">
+                            <div class="sub-topic">
+                                <p class="default-cursor">~1.0 The Nature & Variety of Living Organisms 0000000</p>
+                                <div class="container">
+                                    <div class="add add-subtopic" onclick="includeSubtopic(0, 0)">
+                                        <div>
+                                            <span class="vertical vertical-subtopic"></span>
+                                        </div>
+                                        <div>
+                                            <span class="horizontal horizontal-subtopic"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sub-topic">
+                                <p class="default-cursor">~2.0 The Nature & Variety of Living Organisms</p>
+                                <div class="container">
+                                    <div class="add add-subtopic" onclick="includeSubtopic(0, 1)">
+                                        <div>
+                                            <span class="vertical vertical-subtopic"></span>
+                                        </div>
+                                        <div>
+                                            <span class="horizontal horizontal-subtopic"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sub-topic">
+                                <p class="default-cursor">~3.0 The Nature & Variety of Living Organisms</p>
+                                <div class="container">
+                                    <div class="add add-subtopic" onclick="includeSubtopic(0, 2)">
+                                        <div>
+                                            <span class="vertical vertical-subtopic"></span>
+                                        </div>
+                                        <div>
+                                            <span class="horizontal horizontal-subtopic"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topics">
+                        <div class="topic">
+                            <p class="default-cursor">Structure & Function in Living Organisms</p>
+                            <div class="container">
+                                <div class="add add-topic" onclick="includeTopic(1)">
+                                    <div>
+                                        <span class="vertical vertical vertical-topic"></span>
+                                    </div>
+                                    <div>
+                                        <span class="horizontal horizontal-topic"></span>
+                                    </div>
+                                </div>
+                                <img src="./assets/down.png" alt="arrow" class="icon arrow-subtopic pointer-cursor" onclick="openSubtopics(1)">
+                            </div>
+                        </div>
+                        <div class="sub-topics">
+                            <div class="sub-topic">
+                                <p class="default-cursor">~1.0 The Nature & Variety of Living Organisms 1111111</p>
+                                <div class="container">
+                                    <div class="add add-subtopic" onclick="includeSubtopic(1, 0)">
+                                        <div>
+                                            <span class="vertical vertical-subtopic"></span>
+                                        </div>
+                                        <div>
+                                            <span class="horizontal horizontal-subtopic"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sub-topic">
+                                <p class="default-cursor">~2.0 The Nature & Variety of Living Organisms</p>
+                                <div class="container">
+                                    <div class="add add-subtopic" onclick="includeSubtopic(1, 1)">
+                                        <div>
+                                            <span class="vertical vertical-subtopic"></span>
+                                        </div>
+                                        <div>
+                                            <span class="horizontal horizontal-subtopic"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sub-topic">
+                                <p class="default-cursor">~3.0 The Nature & Variety of Living Organisms</p>
+                                <div class="container">
+                                    <div class="add add-subtopic" onclick="includeSubtopic(1, 2)">
+                                        <div>
+                                            <span class="vertical vertical-subtopic"></span>
+                                        </div>
+                                        <div>
+                                            <span class="horizontal     horizontal-subtopic"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topics">
+                        <div class="topic">
+                            <p class="default-cursor">Reproduction & Inheritance</p>
+                            <div class="container">
+                                <div class="add add-topic" onclick="includeTopic(2)">
+                                    <div>
+                                        <span class="vertical vertical vertical-topic"></span>
+                                    </div>
+                                    <div>
+                                        <span class="horizontal horizontal-topic"></span>
+                                    </div>
+                                </div>
+                                <img src="./assets/down.png" alt="arrow" class="icon arrow-subtopic pointer-cursor" onclick="openSubtopics(2)">
+                            </div>
+                        </div>
+                        <div class="sub-topics">
+                            <div class="sub-topic">
+                                <p class="default-cursor">~1.0 The Nature & Variety of Living Organisms</p>
+                                <div class="container">
+                                    <div class="add add-subtopic" onclick="includeSubtopic(2, 0)">
+                                        <div>
+                                            <span class="vertical vertical-subtopic"></span>
+                                        </div>
+                                        <div>
+                                            <span class="horizontal horizontal-subtopic"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sub-topic">
+                                <p class="default-cursor">~2.0 The Nature & Variety of Living Organisms</p>
+                                <div class="container">
+                                    <div class="add add-subtopic" onclick="includeSubtopic(2, 1)">
+                                        <div>
+                                            <span class="vertical vertical-subtopic"></span>
+                                        </div>
+                                        <div>
+                                            <span class="horizontal horizontal-subtopic"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sub-topic">
+                                <p class="default-cursor">~3.0 The Nature & Variety of Living Organisms</p>
+                                <div class="container">
+                                    <div class="add add-subtopic" onclick="includeSubtopic(2, 2)">
+                                        <div>
+                                            <span class="vertical vertical-subtopic"></span>
+                                        </div>
+                                        <div>
+                                            <span class="horizontal     horizontal-subtopic"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="topics">
+                        <div class="topic">
+                            <p class="default-cursor">Ecology & the Environment</p>
+                            <div class="container">
+                                <div class="add add-topic" onclick="includeTopic(3)">
+                                    <div>
+                                        <span class="vertical vertical vertical-topic"></span>
+                                    </div>
+                                    <div>
+                                        <span class="horizontal horizontal-topic"></span>
+                                    </div>
+                                </div>
+                                <img src="./assets/down.png" alt="arrow" class="icon arrow-subtopic pointer-cursor" onclick="openSubtopics(3)">
+                            </div>
+                        </div>
+                        <div class="sub-topics">
+                            <div class="sub-topic">
+                                <p class="default-cursor">~1.0 The Nature & Variety of Living Organisms</p>
+                                <div class="container">
+                                    <div class="add add-subtopic" onclick="includeSubtopic(3, 0)">
+                                        <div>
+                                            <span class="vertical vertical-subtopic"></span>
+                                        </div>
+                                        <div>
+                                            <span class="horizontal horizontal-subtopic"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sub-topic">
+                                <p class="default-cursor">~2.0 The Nature & Variety of Living Organisms</p>
+                                <div class="container">
+                                    <div class="add add-subtopic" onclick="includeSubtopic(3, 1)">
+                                        <div>
+                                            <span class="vertical vertical-subtopic"></span>
+                                        </div>
+                                        <div>
+                                            <span class="horizontal horizontal-subtopic"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sub-topic">
+                                <p class="default-cursor">~3.0 The Nature & Variety of Living Organisms</p>
+                                <div class="container">
+                                    <div class="add add-subtopic" onclick="includeSubtopic(3, 2)">
+                                        <div>
+                                            <span class="vertical vertical-subtopic"></span>
+                                        </div>
+                                        <div>
+                                            <span class="horizontal     horizontal-subtopic"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                    <div class="topics last-topic">
+                        <div class="topic">
+                            <p class="default-cursor">Use of Biological Resources</p>
+                            <div class="container">
+                                <div class="add add-topic" onclick="includeTopic(4)" onclick="checkAdd(0)">
+                                    <div>
+                                        <span class="vertical vertical vertical-topic"></span>
+                                    </div>
+                                    <div>
+                                        <span class="horizontal horizontal-topic"></span>
+                                    </div>
+                                </div>
+                                <img src="./assets/down.png" alt="arrow" class="icon arrow-subtopic pointer-cursor" onclick="openSubtopics(4)">
+                            </div>
+                        </div>
+                        <div class="sub-topics">
+                            <div class="sub-topic">
+                                <p class="default-cursor">~1.0 The Nature & Variety of Living Organisms</p>
+                                <div class="container">
+                                    <div class="add add-subtopic" onclick="includeSubtopic(4, 0)">
+                                        <div>
+                                            <span class="vertical vertical-subtopic"></span>
+                                        </div>
+                                        <div>
+                                            <span class="horizontal horizontal-subtopic"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sub-topic">
+                                <p class="default-cursor">~2.0 The Nature & Variety of Living Organisms</p>
+                                <div class="container">
+                                    <div class="add add-subtopic" onclick="includeSubtopic(4, 1)">
+                                        <div>
+                                            <span class="vertical vertical-subtopic"></span>
+                                        </div>
+                                        <div>
+                                            <span class="horizontal horizontal-subtopic"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sub-topic">
+                                <p class="default-cursor">~3.0 The Nature & Variety of Living Organisms</p>
+                                <div class="container">
+                                    <div class="add add-subtopic" onclick="includeSubtopic(4, 2)">
+                                        <div>
+                                            <span class="vertical vertical-subtopic"></span>
+                                        </div>
+                                        <div>
+                                            <span class="horizontal     horizontal-subtopic"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="current-topics">
+                <p>Current Topics: </p>
+            </div>
+            <div class="btn btn-2 btn-create-paper">
+                <p>Create Past Paper</p>
+                <ul class="current-topics-list"></ul>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="create-account">
+        <div class="sign-up">
+            <div class="get-started">
+                <h1>Get Started</h1>
+            </div>
+            <div class="details">
+                <div class="input-container">
+                    <input type="text" id="firstName" placeholder=" " required />
+                    <label for="firstName">First Name</label>
+                </div>
+              
+                <div class="input-container">
+                    <input type="text" id="lastName" placeholder=" " required />
+                    <label for="lastName">Last Name</label>
+                </div>
+                <div class="details-input email">
+                    <p>E-mail</p>
+                </div>
+                <div class="details-input email2">
+                    <p>Confirm E-mail</p>
+                </div>
+                <div class="details-input password">
+                    <p>Password</p>
+                </div>
+                <div class="details-input password2">
+                    <p>Confirm Password</p>
+                </div>
             </div>
         </div>
     </div>

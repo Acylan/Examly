@@ -2,6 +2,7 @@
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
+    transition: all 300ms ease-in-out;
 }
 
 body {
@@ -11,6 +12,9 @@ body {
 html {
     scroll-behavior: smooth;
 }
+.icon {
+    height:32px;
+}
 
 /* NAV */
 
@@ -19,6 +23,7 @@ nav {
     display: flex;
     height: 13vh;
     justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 .img-logo {
     margin-top: 0.25rem;
@@ -38,8 +43,8 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-weight: 600;
-    font-size: 26px;
+    font-weight: 800;
+    font-size: 28px;
     color: #1d3557;
 }
 
@@ -82,6 +87,14 @@ nav {
     color: #0B63DE;
 }
 
+/* CORRECT HOVER */
+
+.default-cursor:hover {
+    cursor: default;
+}
+.pointer-cursor:hover {
+    cursor: pointer;    
+}
 /* SUBJECT-CHOOSE */
 
 .main {
@@ -174,4 +187,369 @@ nav {
     background-color: #a8dadc; /* Lighter blue */
     color: #1d3557;
     transform: scale(1.05);
+}
+/* CLOSE */
+
+.main.close {
+    display: none;
+}
+.subject.close {
+    display: none;
+}
+.vertical.close {
+    opacity: 0;
+}
+/* SUBJECT CHOOSER */
+
+.subject {
+    background-color: #f8f9fa;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+}
+.back {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    width: fit-content;
+}
+.back-arrow {
+    position: relative;
+    height: 75px;
+    width: 128px;
+    top: 2px;
+    transition: all 300ms ease-in-out;
+}
+.back-arrow:hover {
+    transform: scale(1.05);
+}
+.back h2 {
+    display: flex;
+    align-items: center;
+    color: #063578; /* Blue theme */
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 300ms ease;
+}
+.back:hover {
+    transform: scale(1.05);
+    text-decoration: underline;
+    text-underline-offset: 0.75rem;
+}
+
+.subject-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.subject-description {
+    font-size: 1.75rem;
+    width: 780px;
+    text-align: center;
+    border-bottom: 2px solid #007BFF; 
+    padding: 10px;
+    margin-top: -1.5rem;
+}
+.subject-description h1 {
+    font-weight: 600;
+}
+
+.topics-display {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin-top: 2rem;
+    border: 0px solid #007BFF; /* Blue border around the topic list */
+    border-radius: 1.5rem; /* Rounded corners */
+    padding: 20px;
+    background-color: white; /* Light gray background for contrast */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+.topics-intro {
+    color: #6c757d;;
+    font-size: 1rem;
+}
+.open-topics {
+    display: flex;
+    border: 1px solid black;
+    border-radius: 1.2rem;
+    align-items: center;
+    background-color: #ffffff;
+    margin-top: 1rem;
+    width: 500px;
+    height: 2.65rem;
+    position: relative;
+    padding: 1rem 2rem;
+    justify-content: space-between;
+    transition: all 300ms ease-in-out;
+
+}
+
+/* CHOOSE TOPICS OPEN */
+
+.choose-topics {
+    max-height: 0px;
+    overflow: hidden;
+    transition: all 300ms ease;
+}
+.choose-topics.open {
+    display: flex;
+    max-height: 500px;
+    flex-direction: column;
+    transition: all 300ms ease-in-out;
+}
+.last-topic {
+    border-bottom-left-radius: 1.2rem;
+    border-bottom-right-radius: 1.2rem;
+}
+.arrow {
+    transition: all 300ms ease-in-out;
+}
+.arrow.rotate {
+    transform: rotate(-180deg);
+}
+.open-topics.open {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.topic {
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0rem 1rem;
+}
+
+.topics {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    align-items: center;
+    background-color: #ffffff;
+    width: 500px;
+    height: fit-content;
+    position: relative;
+    justify-content: space-between;
+    border-radius: 0.75rem;
+}
+.topics.open {
+    border-radius: 0;
+}
+.last-topic.topics {
+    border-bottom-left-radius: 1.2rem;
+    border-bottom-right-radius: 1.2rem;
+}
+.container {
+    display: flex;
+    align-items: center;
+    height: 2.5rem;
+}
+.add {
+    display: flex;
+    border: 1px solid black;
+    width: 24px;
+    height: 24px;
+    justify-content: center;
+    border-radius: 2rem;
+    transition: all 400ms ease-in-out;
+    background-color: white;
+    margin: 1rem;
+}
+.vertical, .horizontal {
+    position: relative;
+    display: flex;
+    width: 2px;
+    height: 15px;
+    background-color: black;
+    color: black;
+    transition: all 200ms ease-in-out;
+}
+.horizontal {
+    transform: rotate(90deg);
+    right: 1px;
+    top: 3px;
+}
+.vertical {
+    left: 1px;
+    top: 3px;
+}
+.add.bigger {
+    transform: scale(1.25) rotate(360deg);
+}
+.add:hover {
+    cursor: pointer;
+}
+.horizontal.minus {
+    right: 0px;
+}
+.add.green {
+    background-color: #60DC54;
+}
+.topic {
+    background-color: #f8f9fa;
+    overflow: hidden;
+    border-radius: 1rem;
+}
+.topics.open .topic {
+    border-radius: 0rem;
+}
+.last-topic.open .topic {
+    background-color: #fbfafa;
+    border-bottom-left-radius: 1.2rem;
+    border-bottom-right-radius: 1.2rem;
+}
+.sub-topic {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+    align-items: center;
+    width: 500px;
+    height: fit-content;
+    position: relative;
+    background-color: #F7F9FA;
+    padding: 0rem 1rem 0rem 3rem;
+    justify-content: space-between;
+    margin-bottom: -1px;
+    border-radius: 0.5rem;
+}
+.sub-topics {
+    max-height: 0px;
+    overflow: hidden;
+    transition: all 250ms ease-in-out;
+}
+.sub-topics.open {
+    max-height: 600px;
+    transition: all 1000ms ease-in-out;
+}
+.sub-topics.open .sub-topic {
+    border-radius: 0rem;
+}
+.arrow-subtopic.open {
+    transform: rotate(-180deg);
+}
+.sub-topic p {
+    color: #686868;
+}
+.sub-topics.close {
+    display: none;
+}
+/* CREATE PAST PAPER */
+
+.btn-create-paper {
+    display: flex;
+    width: fit-content;
+    padding: 1.75rem 1rem;
+    align-items: center;
+    margin: 2rem;
+    border-radius: 1rem;
+}
+.btn-create-paper:hover {
+    background-color: #0953BA;
+    transform: scale(1.05);
+}
+
+/* TOPIC COUNT */
+
+.current-topics {
+    margin-top: 2rem;
+    color: #707070;
+    width: 500px;
+    justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* SIGN UP */
+
+.create-account {
+    display: none;
+    height: 60vh;
+    width: 50vw;
+}
+.sign-up {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    border-radius: 2rem;
+    width: 25vw;
+    align-items: center;
+}
+.get-started h1{
+    margin: 2rem;
+    font-weight: 900;
+    font-size: 2.25rem;
+    color: #052C63;
+}
+.details{
+    display: flex;
+    flex-direction: column;
+}
+.details-input p{
+    color: #a5a5a5;
+    font-weight: 600;
+}
+.details-input{
+    margin: 1rem;
+}
+.details-input::after {
+    content: '';
+    display: block;
+    width: 350px; /* Width of the line */
+    height: 3px; /* Thickness */
+    background: linear-gradient(135deg, #d5d5d5, #d5d5d5); /* Gradient line */
+    margin: 5px auto 0; /* Centered below the text */ /* Slightly rounded edges */
+    border-radius: 1px;
+}
+
+.details-input:focus {
+
+}
+.input-container {
+    position: relative;
+    margin: 20px 0;
+    width: 250px;
+}
+
+.input-container input {
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #ccc;
+    outline: none;
+    font-size: 16px;
+    padding: 5px 0;
+    transition: border-color 0.3s ease;
+}
+
+.input-container input:focus {
+    border-bottom: 2px solid #007BFF; /* Blue underline on focus */
+}
+
+.input-container label {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    font-size: 14px;
+    color: #aaa;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.input-container input:focus + label,
+.input-container input:not(:placeholder-shown) + label {
+    top: -15px;
+    font-size: 12px;
 }
